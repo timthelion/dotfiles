@@ -1,0 +1,14 @@
+set editor="vi"
+set sendmail = "/usr/bin/msmtp"
+set use_from=yes
+set realname="Timothy Hobbs"
+set from=timothy@hobbs.cz
+set envelope_from=yes
+set include=yes
+set postpone=yes
+set postponed="~/Mail/drafts"
+set record="~/Mail/sent"
+set pgp_sign_as=4DBA066B
+set pgp_autosign=yes
+set sort=threads
+set sort_aux=last-date-received

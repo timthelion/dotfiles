@@ -1,0 +1,4 @@
+keycode 119 = Tab
+keycode 23  = ISO_Level3_Shift
+keycode 104 = Super_L
+add mod4 = Super_L

@@ -1,0 +1,4 @@
+PATH=$HOME/bin:/usr/bin:/bin:/usr/local/bin:.
+MAILDIR=$HOME/mail/
+DEFAULT=$HOME/mail/
+LOGFILE=$MAILDIR/procmail.log

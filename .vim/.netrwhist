@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/timothy/current'
+let g:netrw_dirhist_2='/home/timothy/works/2013/resurrections/done/fenfire/fenfire/Fenfire'
+let g:netrw_dirhist_3='/home/timothy/works/2013/resurrections/done/fenfire/fenfire/Fenfire/FileDialogs.hs'
+let g:netrw_dirhist_4='/home/timothy/works/2013/resurrections/done/fenfire/fenfire/Fenfire'

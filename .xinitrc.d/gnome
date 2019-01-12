@@ -1,0 +1,4 @@
+setxkbmap -layout cz -option ctrl:nocaps
+xmodmap ~/.xmodmap-xmonad
+
+gnome-session

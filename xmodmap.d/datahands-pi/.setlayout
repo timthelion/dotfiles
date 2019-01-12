@@ -1,0 +1,2 @@
+setxkbmap -layout "cz" -option ctrl:nocaps
+

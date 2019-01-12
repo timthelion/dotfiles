@@ -1,0 +1,8 @@
+[user]
+	name = Timothy Hobbs
+	email = timothyhobbs@seznam.cz
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1022x766+0+0
+	main-window-view = FileView
+	history-view-vpane-position = 266

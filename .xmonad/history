@@ -1,0 +1,1 @@
+fromList [("Add group: ",["bar","foo","main"]),("Switch to group: ",["main","bar","main","bar","main","bar","main","foo","main","main","foo","foo","main","main","main"])]
