@@ -88,8 +88,8 @@ myWorkspaces    = withScreens 3 $ map show [1..8]
  
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#ffffff"
-myFocusedBorderColor = "#000000"
+myNormalBorderColor  = "#464849"
+myFocusedBorderColor = "#35455e"
 
 -- Config for Prompt
 oxyXPConfig :: XPConfig
@@ -111,7 +111,7 @@ oxyXPConfig = defaultXPConfig { font              = "xft:Consolas-12"
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
  
     -- launch a terminal
-    [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+    [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
  
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
@@ -136,7 +136,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_m     ), windows W.focusMaster  )
  
     -- Swap the focused window and the master window
-    , ((modm,               xK_Return), windows W.swapMaster)
+    , ((modm .|. shiftMask, xK_m     ), windows W.swapMaster)
  
     -- Shrink the master area
     , ((modm,               xK_h     ), sendMessage Shrink)
