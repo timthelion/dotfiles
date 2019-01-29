@@ -20,6 +20,7 @@ import Data.Monoid
 import System.Exit
 --import XMonad.Actions.Volume
 import XMonad.Actions.DynamicWorkspaceGroups
+import XMonad.Actions.GridSelect
 import XMonad.Layout.Roledex
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
@@ -116,6 +117,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
     --, ((modm,               xK_p     ), spawn "gnome-terminal")
+    , ((modm,               xK_g     ),  goToSelected defaultGSConfig  { gs_cellwidth = 400 })
+    
  
     -- close focused window
     , ((modm .|. shiftMask, xK_q     ), kill)
