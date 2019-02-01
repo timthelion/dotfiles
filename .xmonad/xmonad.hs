@@ -22,6 +22,7 @@ import System.Exit
 import XMonad.Actions.DynamicWorkspaceGroups
 import XMonad.Actions.GridSelect
 import XMonad.Actions.WindowBringer
+import XMonad.Actions.UpdatePointer
 import XMonad.Layout.Roledex
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
@@ -294,6 +295,7 @@ myEventHook = docksEventHook -- mempty
 -- combining it with ewmhDesktopsLogHook.
 --
 myLogHook = dynamicLog
+            >> updatePointer (1, 1) (0, 0)
  
 ------------------------------------------------------------------------
 -- Startup hook
