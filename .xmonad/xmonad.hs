@@ -295,7 +295,7 @@ myEventHook = docksEventHook -- mempty
 -- combining it with ewmhDesktopsLogHook.
 --
 myLogHook = dynamicLog
-            >> updatePointer (1, 1) (0, 0)
+            >> updatePointer (0.5, 0.5) (0, 0)
  
 ------------------------------------------------------------------------
 -- Startup hook
