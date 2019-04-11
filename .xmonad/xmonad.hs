@@ -27,6 +27,7 @@ import XMonad.Layout.Roledex
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.IndependentScreens
+import XMonad.Actions.PhysicalScreens
 import XMonad.Layout.Accordion
 import XMonad.Prompt
 import XMonad.Prompt.Shell
@@ -87,7 +88,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = withScreens 4 $ map show [1..8]
+myWorkspaces    = withScreens 4 $ map show [1..6]
  
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -158,6 +159,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
  
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+    , ((modm              , xK_d), onPrevNeighbour W.view)
+    , ((modm              , xK_f), onNextNeighbour W.view)
+    , ((modm .|. shiftMask, xK_d), onPrevNeighbour W.shift)
+    , ((modm .|. shiftMask, xK_f), onNextNeighbour W.shift)
 
     -- Volume controll
     --, ((0                 , xK_F22), toggleMute >> return ())
@@ -186,7 +191,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     [((m .|. modm, k), windows $ onCurrentScreen f i)
         | (i, k) <- zip (workspaces' conf) [xK_z,xK_u,xK_i,xK_o
-                                           ,xK_a,xK_s,xK_d,xK_f]
+                                           ,xK_a,xK_s]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
     ++
  
@@ -194,9 +199,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
-    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_e, xK_r, xK_w, xK_t] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+   [((modm .|. mask, key), f sc)
+     | (key, sc) <- zip [xK_w, xK_e, xK_r, xK_t] [0..]
+     , (f, mask) <- [(viewScreen, 0), (sendToScreen, shiftMask)]]
 -- w 
  
 ------------------------------------------------------------------------
